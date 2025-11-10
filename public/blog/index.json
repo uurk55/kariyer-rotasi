@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "fmea-temel",
+    "title": "FMEA Nedir? Adım Adım Uygulama",
+    "date": "2025-06-15",
+    "excerpt": "Tasarım ve proses FMEA farkları, RPN ve pratik ipuçları.",
+    "tags": ["Kalite", "Mühendislik", "Öne Çıkan"],
+    "cover": "/covers/fmea.png"
+  },
+  {
+    "slug": "star-teknigi",
+    "title": "Mülakatlarda STAR Tekniği",
+    "date": "2025-05-20",
+    "excerpt": "Durum–Görev–Aksiyon–Sonuç ile net ve etkili yanıtlar.",
+    "tags": ["Kariyer"],
+    "cover": "/covers/star.png"
+  },
+  {
+    "slug": "chatgpt-verimlilik",
+    "title": "ChatGPT ile 5x Verimlilik",
+    "date": "2025-04-10",
+    "excerpt": "Prompt kalıpları ve kontrol listeleriyle iş akışı hızlandırma.",
+    "tags": ["Yapay Zekâ", "Verimlilik"],
+    "cover": "/covers/chatgpt.png"
+  },
+  {
+    "slug": "pomodoro-20",
+    "title": "Pomodoro 2.0",
+    "date": "2025-03-05",
+    "excerpt": "Zaman kutulama + enerji yönetimi ile derin çalışma.",
+    "tags": ["Verimlilik"],
+    "cover": "/covers/pomodoro.png"
+  }
+]

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kariyer-rotasi</title>
+    <meta name="title" content="Kariyer Rotası – Kalite, Mühendislik, Yapay Zekâ">
+    <meta name="description" content="Kalite yönetimi, kariyer, yapay zekâ ve verimlilik üzerine sade, pratik rehberler.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kariyer Rotası">
+    <meta property="og:description" content="Kalite yönetimi, kariyer, yapay zekâ ve verimlilik üzerine sade, pratik rehberler.">
+    <meta property="og:image" content="/og-cover.png"> <!-- varsa -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script defer data-domain="kariyerrotasi.com" data-spa="auto" src="https://plausible.io/js/plausible.js"></script>
+
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+  // Header'a scroll gölgesi
+  (function(){
+    const h = document.querySelector('.header');
+    const onScroll = () => {
+      if(!h) return;
+      if(window.scrollY > 6) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+    };
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  })();
+</script>
+
+  </body>
+</html>
