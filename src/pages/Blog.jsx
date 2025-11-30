@@ -1,16 +1,17 @@
-// src/pages/Blog.jsx
 import React from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Seo from "../components/Seo";
 
 export default function Blog() {
   const [items, setItems] = React.useState([]);
-  const [activeTag, setActiveTag] = React.useState("Tümü");
   const [tags, setTags] = React.useState(["Tümü"]);
 
   const [searchParams] = useSearchParams();
   const initialQ = searchParams.get("q") || "";
+  const initialCategory = searchParams.get("category") || "Tümü";
+
   const [q, setQ] = React.useState(initialQ);
+  const [activeTag, setActiveTag] = React.useState(initialCategory);
 
   const nav = useNavigate();
 
@@ -31,10 +32,10 @@ export default function Blog() {
       });
   }, []);
 
-  // URL değişirse arama inputunu güncelle
   React.useEffect(() => {
     setQ(initialQ);
   }, [initialQ]);
+
 
   const byTag =
     activeTag === "Tümü"

@@ -226,32 +226,6 @@ a{
   line-height:1.6;
 }
 
-.hero{
-  padding: 48px 0;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(37,99,235,0.07),
-      rgba(59,130,246,0.02)
-    ),
-    var(--bg-soft);
-  border-bottom: 1px solid var(--border);
-}
-
-/* Eğer ileride hero görseli eklersen:
-   .hero{
-     background:
-       linear-gradient(...),
-       url("/hero-career.jpg") center/cover no-repeat;
-   }
-*/
-
-.hero .actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top: 12px;
-}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -365,6 +339,46 @@ a{
   display:flex;
   gap:10px;
 }
+
+/* ---------- Anasayfa: 4 alan kartı ikonları ---------- */
+
+.category-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 20px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.10);
+  border: 1px solid rgba(148,163,184,0.25);
+}
+
+/* Kalite – mavi/yeşil ton */
+.category-icon-quality{
+  background: radial-gradient(circle at 30% 0%, #bfdbfe, #1d4ed8);
+  color: #0b1120;
+}
+
+/* Kariyer – mor/pembe ton */
+.category-icon-career{
+  background: radial-gradient(circle at 30% 0%, #f9a8d4, #7c3aed);
+  color: #0b1120;
+}
+
+/* Yapay zekâ – mor/mavi ton */
+.category-icon-ai{
+  background: radial-gradient(circle at 30% 0%, #c4b5fd, #4f46e5);
+  color: #0b1120;
+}
+
+/* Verimlilik – yeşil ton */
+.category-icon-productivity{
+  background: radial-gradient(circle at 30% 0%, #bbf7d0, #16a34a);
+  color: #0b1120;
+}
+
 
 /* ---------- Markdown / Blog İçerik ---------- */
 /* Eski article.card başlık / kod stilleri yerini .markdown'a bırakıyor */
@@ -584,4 +598,101 @@ a{
   justify-content: center;
   font-size: 12px;
   color: #6b7280;
+}
+
+
+/* Kategori kart ikonları */
+.category-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  box-shadow: 0 10px 22px rgba(15,23,42,0.15);
+}
+.category-icon span{
+  font-size: 22px;
+}
+
+/* Farklı tonlar */
+.category-icon-quality{
+  background: linear-gradient(135deg,#2563eb,#38bdf8);
+  color:#eff6ff;
+}
+.category-icon-career{
+  background: linear-gradient(135deg,#fb7185,#f97316);
+  color:#fef2f2;
+}
+.category-icon-ai{
+  background: linear-gradient(135deg,#6366f1,#a855f7);
+  color:#eef2ff;
+}
+.category-icon-productivity{
+  background: linear-gradient(135deg,#22c55e,#84cc16);
+  color:#ecfdf3;
+}
+
+/* Blog kapak placeholder'ı */
+.post-cover-placeholder{
+  width: 100%;
+  height: 150px;
+  border-radius: 18px 18px 0 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #e5e7eb,
+      #e5e7eb 6px,
+      #f3f4f6 6px,
+      #f3f4f6 12px
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+}
+.hero{
+  position: relative;
+  padding: 72px 0 64px;
+  border-bottom: 1px solid var(--border);
+  background-image: url('/hero-career-road.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero > .container{
+  position: relative;
+  z-index: 1;
+}
+/* ---------- Blog kartı: kapaksız yazı placeholder'ı ---------- */
+
+.post-cover-placeholder{
+  width: 100%;
+  height: 150px;
+  border-radius: 16px 16px 0 0;
+  background: radial-gradient(circle at 30% 0%, #e5e7eb, #cbd5f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+/* ---------- Blog kartı: kapaksız yazı placeholder'ı ---------- */
+
+.post-cover-placeholder{
+  width: 100%;
+  height: 150px;
+  border-radius: 16px 16px 0 0;
+  background: radial-gradient(circle at 30% 0%, #e5e7eb, #cbd5f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
 }
