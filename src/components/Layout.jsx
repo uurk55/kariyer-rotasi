@@ -9,18 +9,15 @@ export default function Layout({ children }) {
   function handleSearchSubmit(e) {
     e.preventDefault();
     const q = search.trim();
-    if (!q) {
-      nav("/blog");
-    } else {
-      nav(`/blog?q=${encodeURIComponent(q)}`);
-    }
+    if (!q) nav("/blog");
+    else nav(`/blog?q=${encodeURIComponent(q)}`);
   }
 
   return (
     <>
       <header className="header">
         <div className="container header-row">
-          {/* Logo */}
+          {/* Logo (ESKİ HALİNE GERİ DÖNDÜ) */}
           <Link
             to="/"
             className="logo"
@@ -30,25 +27,30 @@ export default function Layout({ children }) {
               gap: 10,
               lineHeight: 1,
               textDecoration: "none",
+              flexShrink: 0,
             }}
           >
             <img
               src="/logo.png"
               alt="Kariyer Rotası"
-              style={{ height: 28, display: "block" }}
+              style={{ height: 28, width: "auto", display: "block" }}
             />
             <span
               style={{
                 fontFamily: "Poppins,system-ui",
                 fontWeight: 700,
                 fontSize: 18,
+                color: "#e5e7eb", // koyu header için açık
               }}
             >
-              Kariyer <span style={{ color: "#111827" }}>Rotası</span>
+              Kariyer{" "}
+              <span style={{ color: "#ffffff" }}>
+                Rotası
+              </span>
             </span>
           </Link>
 
-          {/* Arama çubuğu */}
+          {/* Arama çubuğu (ESKİ YAPI) */}
           <form className="header-search" onSubmit={handleSearchSubmit}>
             <div className="header-search-inner">
               <span className="header-search-icon">🔍</span>
@@ -61,7 +63,7 @@ export default function Layout({ children }) {
             </div>
           </form>
 
-          {/* Nav */}
+          {/* Nav (ESKİ HAL) */}
           <nav className="nav">
             <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
               Ana Sayfa
@@ -69,22 +71,13 @@ export default function Layout({ children }) {
             <NavLink to="/blog" className={({ isActive }) => (isActive ? "active" : "")}>
               Blog
             </NavLink>
-            <NavLink
-              to="/kaynaklar"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
+            <NavLink to="/kaynaklar" className={({ isActive }) => (isActive ? "active" : "")}>
               Kaynaklar
             </NavLink>
-            <NavLink
-              to="/hakkimda"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
+            <NavLink to="/hakkimda" className={({ isActive }) => (isActive ? "active" : "")}>
               Hakkımda
             </NavLink>
-            <NavLink
-              to="/iletisim"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
+            <NavLink to="/iletisim" className={({ isActive }) => (isActive ? "active" : "")}>
               İletişim
             </NavLink>
           </nav>
@@ -95,7 +88,6 @@ export default function Layout({ children }) {
 
       <footer className="footer">
         <div className="container footer-inner">
-          {/* Marka */}
           <div className="footer-col">
             <div className="footer-logo">Kariyer Rotası</div>
             <p className="footer-text">
@@ -103,7 +95,6 @@ export default function Layout({ children }) {
             </p>
           </div>
 
-          {/* Sayfalar */}
           <div className="footer-col">
             <div className="footer-title">Sayfalar</div>
             <nav className="footer-links">
@@ -115,7 +106,6 @@ export default function Layout({ children }) {
             </nav>
           </div>
 
-          {/* Yasal */}
           <div className="footer-col">
             <div className="footer-title">Yasal</div>
             <div className="footer-links">
@@ -125,15 +115,10 @@ export default function Layout({ children }) {
             </div>
           </div>
 
-          {/* Sosyal */}
           <div className="footer-col">
             <div className="footer-title">Sosyal</div>
             <div className="footer-social">
-              <a
-                href="https://www.linkedin.com/in/uğur-kapancı"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://www.linkedin.com/in/uğur-kapancı" target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
               <a href="mailto:uurk5505@gmail.com">E-posta</a>

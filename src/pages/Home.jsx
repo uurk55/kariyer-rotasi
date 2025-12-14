@@ -1,4 +1,4 @@
-// src/pages/Home.jsx 
+// src/pages/Home.jsx
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Seo from "../components/Seo";
@@ -35,445 +35,300 @@ export default function Home() {
     <>
       <Seo
         title="Kariyer Rotası – Mühendisler ve kalite profesyonelleri için kariyer & kalite rehberleri"
-        description="Elektrik–Elektronik mühendisliği ve kalite yönetimi deneyimini; yapay zekâ ve verimlilikle birleştirerek mühendisler ve kalite profesyonellerine uygulanabilir rehberler sunan platform."
+        description="Kalite yönetimi, kariyer gelişimi, yapay zekâ ve verimlilik konularında; teoride kaybolmadan, sahada uygulanabilir rehberler ve şablonlar."
         type="website"
       />
 
-      {/* 🔹 SADECE ÜSTTEKİ HERO KISMI – ARKAPLAN BURADA */}
-      <section className="hero">
-        <div className="container">
-          <div
-            style={{
-              display: "grid",
-              gap: 24,
-              gridTemplateColumns: "minmax(0,2fr) minmax(0,1.4fr)",
-              alignItems: "flex-start",
-            }}
-          >
-            {/* SOL BLOK – ANA MESAJ */}
-            <div>
-              <div
-                style={{
-                  fontSize: 12,
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  letterSpacing: ".08em",
-                  color: "#2563eb",
-                  marginBottom: 6,
-                }}
-              >
-                Mühendisler ve kalite profesyonelleri için
-              </div>
+      {/* HEADER ALTI – REKLAM ALANI */}
+      <div className="top-ad-slot" aria-label="Reklam alanı">
+        {/* Buraya reklam / banner gelecek */}
+      </div>
 
-              <h1 className="h1">Kariyer yolculuğuna hazır mısın?</h1>
-              <p className="p" style={{ marginTop: 8 }}>
-                Kalite yönetimi, kariyer gelişimi, yapay zekâ ve verimlilik
-                konularında; teoride kaybolmadan, sahada uygulanabilir rehberler
-                ve şablonlar paylaşan bir platform.
-              </p>
+      <div className="home-wrap">
+        {/* HERO */}
+        <section className="hero">
+          <div className="hero-bg" aria-hidden="true" />
 
-              <div className="actions">
-                <button
-                  className="btn btn-primary"
-                  type="button"
-                  onClick={() => nav("/blog")}
-                >
-                  Yazıları keşfet →
-                </button>
-                <button
-                  className="btn btn-ghost"
-                  type="button"
-                  onClick={() => nav("/kaynaklar")}
-                >
-                  Ücretsiz şablonlara göz at
-                </button>
-              </div>
-
-              <ul
-                className="p"
-                style={{
-                  marginTop: 8,
-                  paddingLeft: 18,
-                  fontSize: 14,
-                }}
-              >
-                <li>8D, FMEA, SPC gibi kalite araçları için pratik rehberler</li>
-                <li>Mühendisler için CV, mülakat ve LinkedIn ipuçları</li>
-                <li>ChatGPT ile işi hızlandırma ve verimlilik artırma yolları</li>
-              </ul>
-
-              <div
-                style={{
-                  marginTop: 10,
-                  fontSize: 12,
-                  color: "#6b7280",
-                }}
-              >
-                ✦ İçerikler: gerçek üretim ortamı deneyimi + sade anlatım.
-              </div>
-            </div>
-
-            {/* SAĞ BLOK – BİLGİ KARTI */}
-            <aside>
-              <div className="card hero-note">
-                <div
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#1d4ed8",
-                    marginBottom: 6,
-                  }}
-                >
-                  Kariyer Rotası’nda neler bulacaksın?
+          <div className="container">
+            <div className="hero-inner">
+              <div className="hero-left">
+                <div className="hero-kicker">
+                  MÜHENDİSLER VE KALİTE PROFESYONELLERİ İÇİN
                 </div>
-                <p className="p" style={{ fontSize: 14, marginTop: 0 }}>
-                  Bu platform, özellikle kariyerinin ilk yıllarındaki mühendis ve
-                  kalite profesyonelleri için tasarlandı.
+
+                <h1 className="hero-title">Kariyer yolculuğuna hazır mısın?</h1>
+
+                <p className="hero-desc">
+                  Kalite yönetimi, kariyer gelişimi, yapay zekâ ve verimlilik
+                  konularında; teoride kaybolmadan, sahada uygulanabilir rehberler
+                  ve şablonlar paylaşan bir platform.
                 </p>
-                <ul
-                  className="p"
-                  style={{
-                    paddingLeft: 18,
-                    marginTop: 4,
-                    fontSize: 14,
-                  }}
-                >
-                  <li>Kalite yönetimi için örnekli anlatımlar</li>
-                  <li>İndirilebilir şablonlar ve dokümanlar</li>
-                  <li>Yapay zekâyı işine entegre etme fikirleri</li>
+
+                <div className="hero-actions">
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={() => nav("/blog")}
+                  >
+                    Yazıları keşfet →
+                  </button>
+
+                  {/* İkincil değil: primary gibi vurgulu */}
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={() => nav("/kaynaklar")}
+                  >
+                    Ücretsiz şablonlara göz at →
+                  </button>
+                </div>
+
+                <ul className="hero-bullets">
+                  <li>8D, DÖF, FMEA, SPC gibi kalite araçları için pratik rehberler</li>
+                  <li>CV, mülakat ve LinkedIn odaklı kariyer içerikleri</li>
+                  <li>ChatGPT ile hızlandırma ve verimlilik artırma senaryoları</li>
                 </ul>
-                <p
-                  className="p"
-                  style={{
-                    fontSize: 13,
-                    marginTop: 8,
-                  }}
-                >
-                  Hedef: Teoride boğmadan, doğrudan sahada kullanabileceğin bilgi
-                  vermek.
-                </p>
               </div>
-            </aside>
-          </div>
-        </div>
-      </section>
 
-      {/* 🔹 BURADAN SONRASI NORMAL ARKA PLAN – GÖRSEL YOK */}
-      <main>
-        <div className="container" style={{ padding: "32px 0 40px" }}>
-          {/* 4 ANA KATEGORİ KARTI */}
-          <section>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: 12,
-                alignItems: "baseline",
-                marginBottom: 10,
-                flexWrap: "wrap",
-              }}
-            >
-              <h2
-                style={{
-                  fontFamily: "Poppins,system-ui",
-                  margin: 0,
-                  fontSize: 20,
-                }}
-              >
-                Kariyer Rotası’nda odaklandığım 4 alan
-              </h2>
-              <span
-                style={{
-                  fontSize: 13,
-                  color: "#6b7280",
-                }}
-              >
-                Kalite • Kariyer • Yapay Zekâ • Verimlilik
-              </span>
+              <aside className="hero-note">
+                <h3>Kariyer Rotası’nda neler bulacaksın?</h3>
+                <p style={{ margin: 0 }}>
+                  Özellikle kariyerinin ilk yıllarındaki mühendis ve kalite
+                  profesyonelleri için, doğrudan sahada kullanabileceğin sade içerikler.
+                </p>
+                <ul>
+                  <li>Örnekli anlatımlar ve kısa kontrol listeleri</li>
+                  <li>İndirilebilir şablonlar ve hazır formlar</li>
+                  <li>Yapay zekâyı işine entegre etmeyi kolaylaştıran fikirler</li>
+                </ul>
+                <p style={{ margin: "10px 0 0", opacity: 0.95 }}>
+                  Hedef: Teoride boğmadan, “al ve uygula” formatı.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        {/* KONULARI KEŞFET */}
+        <section className="section">
+          <div className="container">
+            <div className="section-head">
+              <h2 className="section-title">Konuları keşfet</h2>
+              <p className="section-sub">
+                Nereden başlayacağını bilmiyorsan, bu dört alana göz at.
+              </p>
             </div>
 
-            <div
-              style={{
-                display: "grid",
-                gap: 16,
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              }}
-            >
-              {/* Kalite Yönetimi */}
-              <article className="card" style={{ padding: 18 }}>
-                <div className="category-icon category-icon-quality">
-                  <span>📊</span>
+            <div className="topic-grid">
+              <div className="topic-card topic-quality">
+                <div className="topic-head">
+                  <div className="topic-icon">📊</div>
+                  <h3 className="topic-title">Kalite Yönetimi</h3>
                 </div>
-                <h3
-                  style={{
-                    margin: "0 0 6px",
-                    fontFamily: "Poppins,system-ui",
-                    fontSize: 16,
-                  }}
-                >
-                  Kalite Yönetimi
-                </h3>
-                <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
-                  8D, FMEA, SPC gibi kalite araçlarını sahada uygulayabileceğin
-                  örneklerle anlatan rehberler ve şablonlar.
+                <p className="topic-desc">
+                  8D, DÖF, FMEA, SPC gibi araçlar ve ISO 9001/14001/45001/50001 üzerine
+                  sahadan örnekli rehberler.
                 </p>
-                <Link
-                  to="/blog?category=Kalite"
-                  style={{ fontSize: 13, textDecoration: "none" }}
-                >
-                  Yazıları gör →
+                <Link className="topic-link" to="/blog?category=Kalite">
+                  Kalite yazılarına git →
                 </Link>
-              </article>
+              </div>
 
-              {/* Kariyer Gelişimi */}
-              <article className="card" style={{ padding: 18 }}>
-                <div className="category-icon category-icon-career">
-                  <span>🎯</span>
+              <div className="topic-card topic-career">
+                <div className="topic-head">
+                  <div className="topic-icon">🎯</div>
+                  <h3 className="topic-title">Kariyer Gelişimi</h3>
                 </div>
-                <h3
-                  style={{
-                    margin: "0 0 6px",
-                    fontFamily: "Poppins,system-ui",
-                    fontSize: 16,
-                  }}
-                >
-                  Kariyer Gelişimi
-                </h3>
-                <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
-                  Mülakat, CV, LinkedIn ve maaş pazarlığı gibi başlıklarda, özellikle
-                  mühendisler için pratik öneriler.
+                <p className="topic-desc">
+                  CV, mülakat, LinkedIn ve maaş pazarlığı gibi konularda mühendisler için
+                  net, uygulanabilir içerikler.
                 </p>
-                <Link
-                  to="/blog?category=Kariyer"
-                  style={{ fontSize: 13, textDecoration: "none" }}
-                >
-                  Yazıları gör →
+                <Link className="topic-link" to="/blog?category=Kariyer">
+                  Kariyer yazılarına git →
                 </Link>
-              </article>
+              </div>
 
-              {/* Teknoloji & Yapay Zekâ */}
-              <article className="card" style={{ padding: 18 }}>
-                <div className="category-icon category-icon-ai">
-                  <span>🤖</span>
+              <div className="topic-card topic-ai">
+                <div className="topic-head">
+                  <div className="topic-icon">🤖</div>
+                  <h3 className="topic-title">Teknoloji & Yapay Zekâ</h3>
                 </div>
-                <h3
-                  style={{
-                    margin: "0 0 6px",
-                    fontFamily: "Poppins,system-ui",
-                    fontSize: 16,
-                  }}
-                >
-                  Teknoloji & Yapay Zekâ
-                </h3>
-                <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
-                  ChatGPT ve benzeri araçları günlük işlerinde nasıl
-                  kullanabileceğine dair somut senaryolar.
+                <p className="topic-desc">
+                  ChatGPT ve benzeri araçları iş akışına entegre etmek için promptlar,
+                  şablonlar ve örnek senaryolar.
                 </p>
-                <Link
-                  to="/blog?category=Yapay Zekâ"
-                  style={{ fontSize: 13, textDecoration: "none" }}
-                >
-                  Yazıları gör →
+                <Link className="topic-link" to="/blog?category=Yapay%20Zek%C3%A2">
+                  Yapay zekâ içerikleri →
                 </Link>
-              </article>
+              </div>
 
-              {/* Verimlilik */}
-              <article className="card" style={{ padding: 18 }}>
-                <div className="category-icon category-icon-productivity">
-                  <span>⏱️</span>
+              <div className="topic-card topic-prod">
+                <div className="topic-head">
+                  <div className="topic-icon">⏱️</div>
+                  <h3 className="topic-title">Verimlilik</h3>
                 </div>
-                <h3
-                  style={{
-                    margin: "0 0 6px",
-                    fontFamily: "Poppins,system-ui",
-                    fontSize: 16,
-                  }}
-                >
-                  Verimlilik
-                </h3>
-                <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
-                  Zaman yönetimi, odaklanma ve kişisel sistemler kurma üzerine
-                  sade ve uygulanabilir yöntemler.
+                <p className="topic-desc">
+                  Zaman yönetimi, odaklanma ve kişisel sistemler kurma üzerine sade yöntemler
+                  ve kontrol listeleri.
                 </p>
-                <Link
-                  to="/blog?category=Verimlilik"
-                  style={{ fontSize: 13, textDecoration: "none" }}
-                >
-                  Yazıları gör →
+                <Link className="topic-link" to="/blog?category=Verimlilik">
+                  Verimlilik yazıları →
                 </Link>
-              </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* NEREDEN BAŞLAMALIYIM */}
+        <section className="section">
+          <div className="container">
+            <div className="section-head">
+              <h2 className="section-title">Nereden başlamalıyım?</h2>
+              <p className="section-sub">2 hızlı rota: “Kalite tarafı” veya “Kariyer + verimlilik”.</p>
+            </div>
+
+            <div className="start-grid">
+              <div className="start-card">
+                <div className="start-badge">Kaliteye sıfırdan başla</div>
+                <h3 className="start-title">Kalite & sahalar rehberim</h3>
+                <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
+                  Kalibrasyon, tedarikçi değerlendirme, DÖF ve 8D gibi temel dokümanları sahada
+                  nasıl kullanacağını adım adım anlatan başlangıç seti.
+                </p>
+
+                <ul className="start-list">
+                  <li>Hangi form ne zaman kullanılır?</li>
+                  <li>İndirilebilir şablonlarla pratik ilerleme</li>
+                  <li>LinkedIn paylaşımına uygun kısa özetler</li>
+                </ul>
+
+                <div className="start-actions">
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={() => nav("/blog?category=Kalite")}
+                  >
+                    Kalite rehberine git →
+                  </button>
+                  <Link className="topic-link" to="/kaynaklar">
+                    İlk şablonları indir →
+                  </Link>
+                </div>
+              </div>
+
+              <div className="start-card">
+                <div className="start-badge">Kariyer + verimlilik</div>
+                <h3 className="start-title">Mühendisler için kariyer pusulası</h3>
+                <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
+                  CV’den LinkedIn’e, mülakattan odak sistemlerine kadar “daha kontrollü bir kariyer”
+                  kurmanı sağlayacak içerikler.
+                </p>
+
+                <ul className="start-list">
+                  <li>CV & LinkedIn kontrol listeleri</li>
+                  <li>STAR tekniği ve örnek cevaplar</li>
+                  <li>Yapay zekâyla hızlandırılmış iş akışları</li>
+                </ul>
+
+                <div className="start-actions">
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={() => nav("/blog?category=Kariyer")}
+                  >
+                    Kariyer yazılarına git →
+                  </button>
+                  <Link className="topic-link" to="/blog?category=Verimlilik">
+                    Verimlilik ipuçlarına git →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ÖNE ÇIKAN REHBER */}
+        {featured && (
+          <section className="section">
+            <div className="container">
+              <div className="section-head">
+                <h2 className="section-title">Öne çıkan rehber</h2>
+                <Link to="/kaynaklar" className="topic-link">
+                  Ücretsiz şablonlar →
+                </Link>
+              </div>
+
+              <div className="featured">
+                <div className="featured-grid">
+                  <div>
+                    <div className="featured-label">ÖNE ÇIKAN REHBER</div>
+                    <h3 style={{ fontFamily: "Poppins,system-ui", margin: "0 0 8px", fontSize: 20 }}>
+                      {featured.title}
+                    </h3>
+                    <p className="p" style={{ margin: "0 0 12px", fontSize: 14 }}>
+                      {featured.excerpt}
+                    </p>
+
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
+                      {(featured.tags || []).slice(0, 4).map((t) => (
+                        <span
+                          key={t}
+                          style={{
+                            fontSize: 11,
+                            padding: "4px 10px",
+                            borderRadius: 999,
+                            border: "1px solid #e5e7eb",
+                            background: "#f9fafb",
+                            color: "#475569",
+                          }}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+                      <button
+                        className="btn btn-primary"
+                        type="button"
+                        onClick={() => nav(`/blog/${featured.slug}`)}
+                      >
+                        Rehberi oku →
+                      </button>
+                      <Link className="topic-link" to="/kaynaklar">
+                        İlgili şablonları gör →
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="featured-side">
+                    <div className="featured-side-title">Bu rehberden ne kazanacaksın?</div>
+                    <ul className="p" style={{ margin: 0, paddingLeft: 18, fontSize: 14, color: "#475569" }}>
+                      <li>Adım adım uygulanabilir bir araç örneği</li>
+                      <li>Gerçek üretim ortamına yakın senaryolar</li>
+                      <li>İndirilebilir şablonla pratik kullanım</li>
+                    </ul>
+                    <div style={{ marginTop: 10, fontSize: 12, color: "#64748b" }}>
+                      ✦ Mantık: “Önce prensip, hemen ardından uygulama”.
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
+        )}
 
-          {/* ÖNE ÇIKAN REHBER */}
-          {featured && (
-            <section style={{ marginTop: 40 }}>
-              <div
-                className="card"
-                style={{
-                  padding: 24,
-                  display: "grid",
-                  gap: 16,
-                  gridTemplateColumns: "minmax(0,2.1fr) minmax(0,1.4fr)",
-                  alignItems: "flex-start",
-                }}
-              >
-                {/* Sol: başlık + özet */}
-                <div>
-                  <div
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      letterSpacing: ".08em",
-                      textTransform: "uppercase",
-                      color: "#1d4ed8",
-                      marginBottom: 6,
-                    }}
-                  >
-                    Öne çıkan rehber
-                  </div>
-                  <h2
-                    style={{
-                      margin: "0 0 6px",
-                      fontFamily: "Poppins,system-ui",
-                      fontSize: 20,
-                    }}
-                  >
-                    {featured.title}
-                  </h2>
-                  <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
-                    {featured.excerpt}
-                  </p>
-
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: 8,
-                      marginBottom: 12,
-                    }}
-                  >
-                    {(featured.tags || []).map((t) => (
-                      <span
-                        key={t}
-                        style={{
-                          fontSize: 11,
-                          padding: "4px 9px",
-                          borderRadius: 999,
-                          border: "1px solid #e5e7eb",
-                          background: "#f9fafb",
-                          color: "#4b5563",
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={() => nav(`/blog/${featured.slug}`)}
-                    >
-                      Rehberi oku →
-                    </button>
-
-                    {featured.slug === "fmea-nedir-adim-adim-uygulama" ? (
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={() => nav("/kaynaklar")}
-                      >
-                        FMEA formunu indir →
-                      </button>
-                    ) : (
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={() => nav("/kaynaklar")}
-                      >
-                        İlgili şablonları gör
-                      </button>
-                    )}
-                  </div>
-                </div>
-
-                {/* Sağ: “Bu rehberde neler var?” listesi */}
-                <div
-                  style={{
-                    padding: 16,
-                    borderRadius: 16,
-                    background: "#f9fafb",
-                    border: "1px solid #e5e7eb",
-                    fontSize: 14,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 600,
-                      marginBottom: 6,
-                      color: "#111827",
-                    }}
-                  >
-                    Bu rehberden ne kazanacaksın?
-                  </div>
-                  <ul
-                    className="p"
-                    style={{ margin: 0, paddingLeft: 18, fontSize: 14 }}
-                  >
-                    <li>Adım adım uygulanabilir bir kalite aracı örneği</li>
-                    <li>Gerçek üretim ortamına yakın örnek senaryolar</li>
-                    <li>İndirilebilir şablon veya form ile pratik kullanım</li>
-                  </ul>
-                  <div
-                    style={{
-                      marginTop: 10,
-                      fontSize: 12,
-                      color: "#6b7280",
-                    }}
-                  >
-                    ✦ Mantık: “Önce prensip, hemen ardından uygulama”.
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* SON YAZILAR */}
-          <section style={{ marginTop: 40 }}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "baseline",
-                gap: 12,
-                marginBottom: 8,
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: "Poppins,system-ui",
-                  margin: 0,
-                  fontSize: 20,
-                }}
-              >
-                Son Yazılar
-              </h3>
-              <Link
-                to="/blog"
-                style={{
-                  fontSize: 13,
-                  textDecoration: "none",
-                  color: "#2563eb",
-                }}
-              >
+        {/* SON YAZILAR */}
+        <section className="section">
+          <div className="container">
+            <div className="section-head">
+              <h2 className="section-title">Son yazılar</h2>
+              <Link to="/blog" className="topic-link">
                 Tüm yazıları gör →
               </Link>
             </div>
 
-            <div className="grid-articles" style={{ marginTop: 10 }}>
+            <div className="grid-articles">
               {latest.length === 0 ? (
                 <>
                   <div className="card">Yükleniyor…</div>
@@ -498,13 +353,7 @@ export default function Home() {
                       onClick={() => nav(`/blog/${item.slug}`)}
                     >
                       {hasCover ? (
-                        <div
-                          style={{
-                            width: "100%",
-                            height: 150,
-                            overflow: "hidden",
-                          }}
-                        >
+                        <div style={{ width: "100%", height: 150, overflow: "hidden" }}>
                           <img
                             src={item.cover}
                             alt={item.title}
@@ -518,30 +367,16 @@ export default function Home() {
                         </div>
                       ) : (
                         <div className="post-cover-placeholder">
-                          <span>Yazı kapağı henüz eklenmedi</span>
+                          <span>Kapak görseli yakında</span>
                         </div>
                       )}
 
-                      <div
-                        style={{
-                          padding: 12,
-                          display: "flex",
-                          flexDirection: "column",
-                          flex: 1,
-                        }}
-                      >
-                        <div
-                          style={{
-                            fontSize: 12,
-                            color: "#6b7280",
-                            marginBottom: 4,
-                          }}
-                        >
-                          {item.date &&
-                            new Date(item.date).toLocaleDateString("tr-TR")}
+                      <div style={{ padding: 12, display: "flex", flexDirection: "column", flex: 1 }}>
+                        <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 4 }}>
+                          {item.date && new Date(item.date).toLocaleDateString("tr-TR")}
                         </div>
 
-                        <h4
+                        <h3
                           style={{
                             margin: "0 0 6px",
                             fontFamily: "Poppins,system-ui",
@@ -550,26 +385,13 @@ export default function Home() {
                           }}
                         >
                           {item.title}
-                        </h4>
+                        </h3>
 
-                        <p
-                          className="p"
-                          style={{
-                            margin: "0 0 8px",
-                            fontSize: 14,
-                          }}
-                        >
+                        <p className="p" style={{ margin: "0 0 10px", fontSize: 14 }}>
                           {item.excerpt}
                         </p>
 
-                        <div
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            gap: 6,
-                            marginBottom: 8,
-                          }}
-                        >
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>
                           {(item.tags || []).slice(0, 2).map((t) => (
                             <span
                               key={t}
@@ -589,9 +411,8 @@ export default function Home() {
 
                         <div style={{ marginTop: "auto" }}>
                           <Link
-                            className="btn"
+                            className="topic-link"
                             to={`/blog/${item.slug}`}
-                            style={{ fontSize: 14 }}
                             onClick={(e) => e.stopPropagation()}
                           >
                             Devamını oku →
@@ -603,41 +424,30 @@ export default function Home() {
                 })
               )}
             </div>
+          </div>
+        </section>
 
-            {/* BÜLTEN ABONELİK KARTI */}
-            <div style={{ marginTop: 40 }}>
-              <div
-                className="card"
-                style={{
-                  padding: 32,
-                  display: "grid",
-                  gap: 12,
-                  maxWidth: 720,
-                  margin: "0 auto",
-                  textAlign: "center",
-                }}
-              >
-                <h3
-                  style={{
-                    margin: 0,
-                    fontFamily: "Poppins,system-ui",
-                    fontSize: 22,
-                  }}
-                >
-                  Yeni yazılardan haberdar ol
-                </h3>
+        {/* NEWSLETTER */}
+        <section className="section">
+          <div className="container">
+            <div className="section-head">
+              <h2 className="section-title">Yeni yazılardan haberdar ol</h2>
+              <p className="section-sub">
+                Kalite yönetimi, kariyer ve verimlilik üzerine yeni içerikler mailine gelsin.
+              </p>
+            </div>
 
-                <p className="p" style={{ margin: 0 }}>
-                  Kalite yönetimi, kariyer ve verimlilik üzerine yeni içerikler
-                  mailine gelsin.
-                </p>
-
-                <NewsletterForm />
+            {/* ORTALAMA WRAPPER */}
+            <div className="newsletter-center">
+              <div className="card newsletter-card" style={{ margin: 0 }}>
+                <div style={{ marginTop: 8 }}>
+                  <NewsletterForm />
+                </div>
               </div>
             </div>
-          </section>
-        </div>
-      </main>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
