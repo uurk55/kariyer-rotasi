@@ -5592,3 +5592,45 @@ hr{
   letter-spacing: -0.02em !important;
   line-height: 1.05 !important;
 }
+/* ===== SPACING FIX: header-hero boşluğu ↑, section arası boşluk ↓ ===== */
+
+/* Header altında reklam slotu varsa (sen eklemiştin) buradan yönet */
+.top-ad-slot{
+  height: 46px;           /* ↑ arttır/azalt */
+  margin: 0;              /* sabit */
+}
+
+/* Hero'nun üstten nefes alması */
+.home-wrap .hero{
+  padding-top: 28px !important;   /* ↑ header ile hero arasını açar */
+}
+
+/* Bazı temalarda main/header altına padding/margin çakışıyor */
+.main{
+  padding-top: 0 !important;
+}
+
+/* Bölümler arası boşluk (genelde section margin/padding fazla) */
+.home-wrap .section{
+  padding: 18px 0 !important;     /* ↓ bölümler arası */
+}
+
+/* Section-card dışarıdan ekstra margin alıyorsa kıs */
+.section-card{
+  margin: 0 !important;
+}
+
+/* Container içindeki kartların alt boşluğu şişiyorsa toparla */
+.section-card + .section-card{
+  margin-top: 0 !important;
+}
+
+/* Hero'dan sonraki ilk section üst boşluğu çoksa kırp */
+.home-wrap .hero + .section{
+  margin-top: 10px !important;
+}
+
+/* Bazı yerlerde .section-alt varsa o da şişiriyor olabilir */
+.section-alt{
+  padding: 18px 0 !important;
+}
