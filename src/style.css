@@ -3914,13 +3914,13 @@ hr{
    ================================= */
 
 .top-ad-slot{
-  height: 300px;              /* reklam alanı yüksekliği */
+  height: 64px;              /* reklam alanı yüksekliği */
   background: transparent;   /* şimdilik boş */
 }
 
 /* Hero header’a yapışmasın */
 .hero{
-  margin-top: 12px;
+  margin-top: 36px;
 }
 /* =========================
    HOME: DIŞ WRAPPER KARTI SÖNDÜR
@@ -4008,4 +4008,1587 @@ hr{
   font-size: 13px;
   color:#64748b;
   margin: 0;
+}
+/* ===== PREMIUM SECTION HEADINGS (override) ===== */
+
+/* Eski çizgi efektleri varsa tamamen kapat */
+.section-title::before,
+.section-title::after,
+.section-head::before,
+.section-head::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Başlık + alt metin hizası ve premium görünüm */
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px; /* eskiye göre daha kompakt */
+}
+
+.section-title{
+  position:relative;
+  margin:0;
+  font-family:Poppins,system-ui;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  font-size:20px;
+  color:#0f172a;
+  padding-bottom:10px; /* underline için */
+}
+
+/* Premium underline */
+.section-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:2px;
+  width:86px;
+  height:4px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(37,99,235,1), rgba(99,102,241,1));
+  opacity:0.95;
+  display:block !important;
+}
+
+.section-sub,
+.section-hint{
+  margin:0;
+  font-size:13px;
+  color:#64748b;
+  max-width:560px;
+}
+/* ===== HERO width tuning ===== */
+.hero-inner{
+  gap:22px; /* biraz daha ferah ama abartmadan */
+}
+
+.hero-left{
+  flex: 1.25;               /* sol kutu daha geniş */
+  min-width: 560px;         /* çok daralmasın */
+}
+
+.hero-note{
+  flex: 0.95;               /* sağ kutu biraz daha küçük */
+}
+
+/* küçük ekranlarda taşma olmasın */
+@media (max-width: 980px){
+  .hero-left{ min-width: 0; }
+}
+/* ===== SECTION spacing tighter ===== */
+.section{
+  padding: 22px 0;   /* muhtemelen 32/40 gibi bir şeydi, düşürdük */
+}
+
+.section + .section{
+  padding-top: 18px; /* araya ekstra boşluk birikmesin */
+}
+/* Kartları biraz daha premium yap */
+.topic-card,
+.start-card,
+.featured,
+.card,
+.newsletter-card{
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+/* ===== HERO: sol kutu ferahlat ===== */
+.hero-inner{
+  gap: 26px !important;
+  align-items: stretch;
+}
+
+.hero-left{
+  flex: 1.55 !important;          /* daha geniş */
+  min-width: 640px !important;    /* daralmasın */
+}
+
+.hero-note{
+  flex: 0.85 !important;
+}
+
+/* sol kartın kendisi (senin kutun hero-left içindeki card hissi veren alan) */
+.hero-left > * { max-width: 100%; }
+
+.hero-title{
+  font-size: 38px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 10px !important;
+}
+
+.hero-desc{
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  opacity: .92 !important;
+  margin-bottom: 12px !important;
+}
+
+/* Bullet'ları sıkıştır (kalabalık hissini azaltır) */
+.hero-bullets{
+  margin-top: 12px !important;
+  gap: 6px !important;
+}
+.hero-bullets li{
+  line-height: 1.45 !important;
+}
+
+/* küçük ekranlarda bozulmasın */
+@media (max-width: 980px){
+  .hero-left{ min-width: 0 !important; }
+  .hero-title{ font-size: 32px !important; }
+}
+/* ===== SECTIONS: aralıkları toparla ===== */
+.section{
+  padding: 14px 0 !important;   /* daha kompakt */
+}
+
+.section-card{
+  margin: 0 !important;
+}
+
+/* Kartların iç boşluğu çok genişse */
+.section-card{
+  padding: 18px !important;
+}
+
+/* Bölüm başlığı alt boşluk */
+.section-head{
+  margin-bottom: 12px !important;
+}
+/* ===== SECTION TITLES: premium görünüm ===== */
+.section-title{
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: #0f172a !important;
+  padding-bottom: 6px !important;
+}
+
+/* Solunda premium accent */
+.section-title::before{
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, rgba(37,99,235,1), rgba(99,102,241,1)) !important;
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.10) !important;
+  display: inline-block !important;
+}
+
+/* Altta glow underline (düz çizgi gibi değil) */
+.section-title::after{
+  content: "" !important;
+  position: absolute !important;
+  left: 20px !important;   /* noktadan sonra başlasın */
+  bottom: -2px !important;
+  width: 110px !important;
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: radial-gradient(circle at 20% 50%, rgba(37,99,235,0.55), rgba(37,99,235,0.0) 70%) !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* küçük başlıklarda daha dengeli */
+@media (max-width: 640px){
+  .section-title::after{ width: 80px !important; }
+}
+/* ===========================
+   KARİYER ROTASI - HOME TUNE (TEK BLOK)
+   CSS dosyanın EN ALTINA yapıştır
+   =========================== */
+
+/* --- Section başlıkları: noktayı kaldır, premium vurgu ekle --- */
+.section-title{
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: #0f172a !important;
+  padding-left: 14px !important;      /* solda şerit için yer */
+  padding-bottom: 8px !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* önceki “nokta” benzeri şey (varsa) komple kapat */
+.section-title::before{
+  content: "" !important;
+  width: 4px !important;
+  height: 18px !important;
+  border-radius: 999px !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: linear-gradient(180deg, rgba(37,99,235,1), rgba(99,102,241,1)) !important;
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.10) !important; /* premium glow */
+  display: block !important;
+}
+
+/* alt vurgu: çizgi gibi değil, glow band */
+.section-title::after{
+  content: "" !important;
+  position: absolute !important;
+  left: 14px !important;
+  bottom: 0px !important;
+  width: 120px !important;
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: radial-gradient(circle at 18% 50%, rgba(37,99,235,0.55), rgba(37,99,235,0.0) 72%) !important;
+  opacity: 1 !important;
+}
+
+/* --- Bölüm aralıkları: zaten iyi, biraz daha dengeli --- */
+.section{
+  padding: 12px 0 !important;
+}
+.section-head{
+  margin-bottom: 12px !important;
+}
+.section-card{
+  margin: 0 !important;
+  padding: 18px !important;
+}
+
+/* --- HERO: sol kutu daha geniş + daha ferah (daralma biter) --- */
+.hero-inner{
+  display: grid !important;
+  grid-template-columns: minmax(720px, 1.55fr) minmax(360px, 0.85fr) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.hero-left{
+  min-width: 720px !important;
+  padding-right: 0 !important;
+}
+
+/* Sol kutunun “nefes” ayarları */
+.hero-kicker{
+  letter-spacing: 0.08em !important;
+  opacity: .95 !important;
+}
+.hero-title{
+  font-size: 40px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+  margin: 8px 0 12px !important;
+  max-width: 100% !important;
+}
+.hero-desc{
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  opacity: .92 !important;
+  margin-bottom: 12px !important;
+  max-width: 72ch !important; /* geniş ama kontrollü */
+}
+
+/* Butonlar arası nefes */
+.hero-actions{
+  gap: 10px !important;
+  margin: 12px 0 10px !important;
+}
+
+/* Bullet’lar daha okunur ama sıkışık değil */
+.hero-bullets{
+  margin-top: 12px !important;
+  padding-left: 18px !important;
+}
+.hero-bullets li{
+  line-height: 1.55 !important;
+  margin: 6px 0 !important;
+}
+
+/* Hero sol kart hissi veren kutu dar görünüyorsa: padding’i artır */
+.hero .hero-left .hero-kicker,
+.hero .hero-left .hero-title,
+.hero .hero-left .hero-desc,
+.hero .hero-left .hero-actions,
+.hero .hero-left .hero-bullets{
+  padding-left: 2px !important;
+}
+
+/* Responsive: dar ekranda tek sütuna düş */
+@media (max-width: 1060px){
+  .hero-inner{
+    grid-template-columns: 1fr !important;
+  }
+  .hero-left{
+    min-width: 0 !important;
+  }
+  .hero-title{
+    font-size: 34px !important;
+  }
+}
+
+/* --- “Nereden başlamalıyım?” kartlarına ikon/görsel hissi (JSX değişmeden) --- */
+.start-grid{
+  gap: 14px !important;
+}
+.start-card{
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+}
+
+/* Kart üstünde yumuşak arka plan dokusu */
+.start-card::after{
+  content: "" !important;
+  position: absolute !important;
+  inset: -40px -60px auto auto !important;
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.18), rgba(37,99,235,0.0) 70%) !important;
+  pointer-events: none !important;
+}
+
+/* Kartın sol üstüne “ikon rozet” */
+.start-card::before{
+  content: "🧩" !important; /* default */
+  position: absolute !important;
+  left: 16px !important;
+  top: 16px !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 14px !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 20px !important;
+  background: linear-gradient(180deg, rgba(37,99,235,0.14), rgba(99,102,241,0.10)) !important;
+  border: 1px solid rgba(37,99,235,0.18) !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08) !important;
+  pointer-events: none !important;
+}
+
+/* 1. kart kalite ikonu, 2. kart kariyer ikonu */
+.start-card:nth-child(1)::before{ content: "📌" !important; }
+.start-card:nth-child(2)::before{ content: "🧭" !important; }
+
+/* Başlık/rozetler ikonla çakışmasın */
+.start-badge{
+  margin-left: 56px !important;
+}
+.start-title{
+  margin-left: 56px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Çok yazı hissini azalt: paragraf biraz daha sıkı, liste daha düzenli */
+.start-card .p{
+  margin-left: 56px !important;
+}
+.start-list{
+  margin-left: 56px !important;
+  padding-left: 18px !important;
+}
+.start-list li{
+  margin: 6px 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* “Nereden başlamalıyım” kart buton alanı daha düzenli */
+.start-actions{
+  margin-left: 56px !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+/* --- Topic kartları biraz daha belirgin (premium shadow) --- */
+.topic-card{
+  border: 1px solid rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06) !important;
+  transition: transform .18s ease, box-shadow .18s ease !important;
+}
+.topic-card:hover{
+  transform: translateY(-2px) !important;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.10) !important;
+}
+
+/* --- “Son yazılar” kart başlıkları daha tok dursun --- */
+.grid-articles .card h3{
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+/* ================================
+   HOME – FINAL POLISH (TEK BLOK)
+   ================================ */
+
+/* ====== BAŞLIKLAR ====== */
+/* Soldaki çizgiyi TAMAMEN kaldır */
+.section-title::before{
+  display: none !important;
+}
+
+/* Sadece altta premium vurgu kalsın */
+.section-title{
+  position: relative !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  letter-spacing: -0.02em !important;
+  padding-bottom: 10px !important;
+}
+
+.section-title::after{
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 120px !important;
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(37,99,235,0.55),
+    rgba(37,99,235,0.0) 70%
+  ) !important;
+}
+
+/* ====== HERO – SOL KUTU GERÇEKTEN BÜYÜSÜN ====== */
+.hero-inner{
+  grid-template-columns: 65% 35% !important; /* NET */
+  gap: 32px !important;
+}
+
+.hero-left{
+  max-width: none !important;
+  padding: 32px 36px !important;
+}
+
+.hero-title{
+  font-size: 42px !important;
+  line-height: 1.15 !important;
+  max-width: 100% !important;
+}
+
+.hero-desc{
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  max-width: 80ch !important; /* DAHA GENİŞ */
+}
+
+.hero-bullets{
+  margin-top: 16px !important;
+}
+
+.hero-bullets li{
+  line-height: 1.65 !important;
+}
+
+/* Mobilde bozulmasın */
+@media (max-width: 1100px){
+  .hero-inner{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ====== ÖNE ÇIKAN REHBER – PREMIUM KART ====== */
+.featured{
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fafc
+  ) !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  border: 1px solid rgba(15,23,42,0.06) !important;
+  box-shadow: 0 20px 50px rgba(15,23,42,0.08) !important;
+}
+
+.featured-grid{
+  gap: 28px !important;
+}
+
+.featured-label{
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .08em !important;
+  color: #2563eb !important;
+  margin-bottom: 6px !important;
+}
+
+/* Sağ taraf – kazanımlar */
+.featured-side{
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+  border: 1px solid rgba(15,23,42,0.06) !important;
+}
+
+.featured-side-title{
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Hover hissi */
+.featured:hover{
+  transform: translateY(-2px);
+  transition: all .2s ease;
+}
+
+/* ====== BÖLÜMLER ARASI BOŞLUK – DENGELİ ====== */
+.section{
+  padding: 14px 0 !important;
+}
+
+.section-card{
+  padding: 20px !important;
+}
+/* =========================================
+   CSS OVERRIDE (ana css dosyanın EN ALTINA)
+========================================= */
+
+/* Reklam alanı - header ile hero arası nefes */
+.top-ad-slot{
+  height: 34px;            /* reklam koyana kadar boşluk */
+  background: transparent; /* istersen sonra doldurursun */
+}
+
+/* HERO: birleşme/taşma engeli + daha küçük yazı */
+.hero-inner{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: 18px;
+  align-items: start;
+}
+.hero-left{
+  max-width: 620px;   /* sol kutuyu kontrol altına alır */
+}
+.hero-title{
+  font-size: 34px;    /* daraltma yerine fontu optimize */
+  line-height: 1.12;
+}
+.hero-desc{
+  font-size: 14px;
+}
+.hero-bullets{
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* Sağ kutu da taşmasın */
+.hero-note{
+  max-width: 520px;
+}
+
+/* Mobilde alt alta */
+@media (max-width: 980px){
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-left, .hero-note{ max-width: 100%; }
+}
+
+/* Başlık çizgisi: sadece altta kalsın (yan çizgiyi kapat) */
+.section-title::before{ content: none !important; }
+
+/* Tag stili (home'da inline yerine class) */
+.tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 12px; }
+.tag{
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #475569;
+}
+
+/* Öne çıkan rehber: daha premium + kapak görseli */
+.featured-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) minmax(0, 0.8fr);
+  gap: 14px;
+  align-items: start;
+}
+.featured-title{
+  font-family: Poppins, system-ui;
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.featured-actions{ display:flex; flex-wrap:wrap; gap:10px; }
+
+.featured-media{
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  background: #fff;
+  min-height: 210px;
+}
+.featured-img{
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+.featured-ph{
+  height: 210px;
+}
+
+/* Featured responsive */
+@media (max-width: 980px){
+  .featured-grid{ grid-template-columns: 1fr; }
+  .featured-media{ min-height: 170px; }
+  .featured-img, .featured-ph{ height: 170px; }
+}
+/* ===== HERO FIX: birleşme yok + sol kutu ferah ===== */
+
+.hero-inner--fix{
+  display: grid;
+  grid-template-columns: minmax(560px, 1fr) minmax(360px, 480px);
+  gap: 22px;
+  align-items: start;
+}
+
+/* Sol kart ferah: daha geniş içerik alanı + daha iyi satır uzunluğu */
+.hero-left--fix{
+  max-width: 760px;            /* önceki daraltma hissini bitirir */
+}
+
+.hero-title--fix{
+  max-width: 22ch;             /* başlık satırı daha “premium” kırılır */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-desc--fix{
+  max-width: 64ch;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.hero-actions--fix{
+  margin-top: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-bullets--fix{
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Sağ kutu sabit, taşma engeli */
+.hero-note--fix{
+  max-width: 480px;
+}
+
+/* Ekran daralınca kesin alt alta */
+@media (max-width: 980px){
+  .hero-inner--fix{
+    grid-template-columns: 1fr;
+  }
+  .hero-left--fix,
+  .hero-note--fix{
+    max-width: 100%;
+  }
+  .hero-title--fix{
+    max-width: 26ch;
+  }
+}
+
+/* Çok geniş ekranlarda biraz daha nefes */
+@media (min-width: 1300px){
+  .hero-inner--fix{
+    gap: 28px;
+  }
+}
+/* ===== HERO – CLEAN & NORMAL ===== */
+
+.hero-clean {
+  padding: 56px 0 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ORTAK KUTU */
+.hero-box {
+  background: rgba(255,255,255,0.88);
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* SOL */
+.hero-main {
+  max-width: 100%;
+}
+
+.hero-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  font-family: Poppins, system-ui;
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+  max-width: 62ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.hero-list {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* SAĞ */
+.hero-side h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.hero-side ul {
+  padding-left: 18px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.hero-side-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* HERO düzeltme: sol yarı-şeffaf, sağ koyu kart (eski gibi) */
+.hero-clean .hero-box {
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 16px;
+  box-shadow: 0 10px 34px rgba(0,0,0,0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* SOL KUTU: yarı şeffaf */
+.hero-clean .hero-main {
+  background: rgba(255,255,255,0.78); /* şeffaflık burada */
+  color: #0f172a;
+}
+
+/* SOLDaki metinleri uyumla */
+.hero-clean .hero-main .hero-desc,
+.hero-clean .hero-main .hero-list {
+  color: rgba(15, 23, 42, 0.78);
+}
+
+/* SAĞ KUTU: koyu, eski stile yakın */
+.hero-clean .hero-side {
+  background: rgba(15, 23, 42, 0.78);
+  color: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+}
+
+/* Sağ kutu başlık + liste renkleri */
+.hero-clean .hero-side h3 {
+  color: #ffffff;
+}
+
+.hero-clean .hero-side ul,
+.hero-clean .hero-side li {
+  color: rgba(255,255,255,0.85);
+}
+
+.hero-clean .hero-side .hero-side-note {
+  color: rgba(255,255,255,0.72);
+}
+
+/* Sağ kutu içindeki madde işaretlerini daha “premium” yap */
+.hero-clean .hero-side ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 0;
+}
+.hero-clean .hero-side li {
+  position: relative;
+  padding-left: 18px;
+  margin: 8px 0;
+}
+.hero-clean .hero-side li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.9);
+  position: absolute;
+  left: 0;
+  top: 7px;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.18);
+}
+/* === HERO ANA KAPSAYICI === */
+.hero-clean {
+  position: relative;
+}
+
+/* === SOL KUTU (ŞEFFAF – CAM EFEKTİ) === */
+.hero-clean .hero-left {
+  background: rgba(255, 255, 255, 0.68) !important; /* GERÇEK şeffaflık */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 36px 40px; /* NEFES ALSIN */
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  max-width: 640px; /* DAR OLMASIN */
+}
+
+/* Sol metinler */
+.hero-clean .hero-left .hero-desc,
+.hero-clean .hero-left .hero-bullets {
+  color: rgba(15, 23, 42, 0.78);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* === SAĞ KUTU (KOYU – BİLGİ ODAKLI) === */
+.hero-clean .hero-note {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.92),
+    rgba(15, 23, 42, 0.85)
+  ) !important;
+  color: #fff;
+  border-radius: 18px;
+  padding: 36px 36px; /* DAHA FAZLA ALAN */
+  box-shadow: 0 18px 46px rgba(0,0,0,0.35);
+  max-width: 420px;
+}
+
+/* Sağ başlık */
+.hero-clean .hero-note h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* Sağ içerik – DAHA FAZLA BİLGİ GÖRÜNÜR */
+.hero-clean .hero-note ul {
+  margin-top: 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.hero-clean .hero-note li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.88);
+}
+
+.hero-clean .hero-note li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+/* === HERO GRID DENGESİ === */
+.hero-clean .hero-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* SOL DAHA GENİŞ */
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Mobil */
+@media (max-width: 900px) {
+  .hero-clean .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-clean .hero-left,
+  .hero-clean .hero-note {
+    max-width: 100%;
+  }
+}
+/* =========================
+   HERO (kesin override)
+   style.css EN ALT
+========================= */
+
+/* hero arka plan (zaten varsa sorun değil) */
+.hero.hero-clean{
+  position: relative;
+  padding: 26px 0 10px;
+}
+
+/* grid dengesi */
+.hero.hero-clean .hero-inner{
+  display:grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+/* SOL KUTU - GERÇEK ŞEFFAFLIK (cam efekt) */
+.hero.hero-clean .hero-left{
+  background: rgba(255,255,255,0.55) !important; /* şeffaf */
+  border: 1px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 34px 38px;
+  box-shadow: 0 18px 44px rgba(15,23,42,0.14);
+  overflow: hidden;
+}
+
+/* Sol kutu daha “premium” */
+.hero.hero-clean .hero-left::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(420px 220px at 15% 10%, rgba(37,99,235,0.20), transparent 60%),
+    radial-gradient(420px 220px at 85% 20%, rgba(56,189,248,0.16), transparent 60%);
+  opacity: .9;
+}
+.hero.hero-clean .hero-left{
+  position: relative; /* ::before için */
+}
+.hero.hero-clean .hero-left > *{
+  position: relative; /* yazılar üstte kalsın */
+}
+
+.hero.hero-clean .hero-kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color:#1d4ed8;
+  margin-bottom: 10px;
+}
+.hero.hero-clean .kicker-icon{
+  display:inline-grid;
+  place-items:center;
+  width:28px; height:28px;
+  border-radius:999px;
+  background: rgba(37,99,235,.12);
+  border:1px solid rgba(37,99,235,.20);
+}
+
+.hero.hero-clean .hero-title{
+  margin:0 0 10px;
+  font-family: Poppins, system-ui;
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height:1.12;
+  color:#0f172a;
+}
+
+.hero.hero-clean .hero-desc{
+  margin:0 0 14px;
+  color: rgba(15,23,42,0.78);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.hero.hero-clean .hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin: 12px 0 14px;
+}
+
+.hero.hero-clean .hero-bullets{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+  color: rgba(15,23,42,0.78);
+  font-size: 14px;
+}
+.hero.hero-clean .hero-bullets li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.hero.hero-clean .bullet-ic{
+  width:22px; height:22px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:8px;
+  background: rgba(15,23,42,.06);
+}
+
+/* SAĞ KUTU - bilgi kartı (daha dolu ve okunaklı) */
+.hero.hero-clean .hero-note{
+  background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(15,23,42,.84)) !important;
+  color:#fff;
+  border-radius: 18px;
+  padding: 32px 30px;
+  box-shadow: 0 24px 54px rgba(0,0,0,.38);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.hero.hero-clean .note-head{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom: 10px;
+}
+.hero.hero-clean .note-badge{
+  width:max-content;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(59,130,246,.18);
+  border:1px solid rgba(59,130,246,.35);
+}
+.hero.hero-clean .hero-note h3{
+  margin:0;
+  font-family:Poppins, system-ui;
+  font-size:18px;
+  line-height:1.25;
+}
+.hero.hero-clean .note-desc{
+  margin: 0 0 14px;
+  color: rgba(255,255,255,.86);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.hero.hero-clean .note-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.hero.hero-clean .note-list li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  color: rgba(255,255,255,.88);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.hero.hero-clean .note-ic{
+  width:22px; height:22px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:8px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.hero.hero-clean .note-foot{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-size: 13px;
+  color: rgba(255,255,255,.82);
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+.hero.hero-clean .note-foot-ic{
+  width:22px; height:22px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:8px;
+  background: rgba(59,130,246,.18);
+  border:1px solid rgba(59,130,246,.25);
+}
+
+/* Mobil */
+@media (max-width: 900px){
+  .hero.hero-clean .hero-inner{
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   CSS (App.css / index.css)
+   ========================= */
+
+.top-ad-slot{
+  height: 34px;                 /* reklam alanı boşluğu */
+  margin: 10px 0 8px;
+}
+
+.hero.hero-landing{
+  position: relative;
+  padding: 34px 0 34px;         /* hero üst-alt nefes */
+}
+
+.hero-landing .hero-inner{
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Sol: cam panel (daha ferah, daha geniş) */
+.hero-landing .hero-glass{
+  border-radius: 18px;
+  padding: 22px 24px 18px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(255,255,255,0.45);
+  box-shadow: 0 18px 45px rgba(15,23,42,0.18);
+  backdrop-filter: blur(10px);
+}
+
+.hero-landing .hero-kicker{
+  letter-spacing: .12em;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(37,99,235,.9);
+  margin-bottom: 10px;
+}
+
+.hero-landing .hero-title{
+  margin: 0 0 10px;
+  font-size: 40px;              /* daha ferah satır */
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero-landing .hero-desc{
+  margin: 0 0 14px;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.hero-landing .hero-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.hero-bullets-landing{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: #475569;
+  font-size: 13.5px;            /* sıkışmayı azalt */
+  line-height: 1.55;
+}
+.hero-bullets-landing li{ margin: 6px 0; }
+
+/* Sağ: bilgi kartı (daha yumuşak, daha az baskın) */
+.hero-note-landing{
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  background: rgba(15,23,42,0.78);
+  border: 1px solid rgba(148,163,184,0.25);
+  box-shadow: 0 18px 45px rgba(2,6,23,0.28);
+  color: rgba(255,255,255,0.92);
+}
+
+.hero-note-landing .hero-note-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 10px;
+}
+
+.hero-note-landing .hero-note-title{
+  margin: 0 0 6px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.hero-note-landing .hero-note-desc{
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: rgba(226,232,240,0.92);
+  line-height: 1.55;
+}
+
+.hero-note-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 9px;
+}
+
+.hero-note-list li{
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(226,232,240,0.95);
+}
+
+.hero-note-dot{
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px;
+}
+
+.hero-note-footer{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(148,163,184,0.18);
+  font-size: 12px;
+  color: rgba(226,232,240,0.92);
+  line-height: 1.45;
+}
+
+.hero-note-foot-ico{
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  flex: 0 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-landing .hero-inner{
+    grid-template-columns: 1fr;
+  }
+  .hero-landing .hero-title{
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 520px){
+  .hero-landing .hero-glass{
+    padding: 18px 16px 14px;
+  }
+  .hero-landing .hero-title{
+    font-size: 30px;
+  }
+  .top-ad-slot{ height: 44px; } /* mobilde offers/reklam daha rahat */
+}
+/* ===== HERO LANDING FINAL ===== */
+
+.hero-landing {
+  padding: 36px 0;
+  position: relative;
+}
+
+.hero-landing .hero-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr; /* AYRILMIŞ VE RAHAT */
+  gap: 28px; /* KUTULAR ASLA BİRLEŞMEZ */
+  align-items: stretch;
+}
+
+/* SOL – GERÇEK ŞEFFAF CAM */
+.hero-glass {
+  background: rgba(255, 255, 255, 0.55); /* ŞEFFAF */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 26px 28px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 20px 50px rgba(15,23,42,0.25);
+}
+
+.hero-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 38px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 14px;
+}
+
+.hero-bullets {
+  margin-top: 14px;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.hero-bullets li {
+  margin-bottom: 6px;
+}
+
+/* SAĞ – GÜZEL OLAN KISIM DOKUNULMADI */
+.hero-note-landing {
+  background: rgba(15, 23, 42, 0.82);
+  color: #f8fafc;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 20px 50px rgba(2,6,23,.35);
+}
+
+.hero-note-badge {
+  font-size: 11px;
+  letter-spacing: .12em;
+  font-weight: 700;
+  opacity: .85;
+  margin-bottom: 10px;
+}
+
+.hero-note-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.hero-note-list li {
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.hero-note-footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  font-size: 12px;
+  opacity: .9;
+}
+
+/* MOBİL */
+@media (max-width: 900px) {
+  .hero-landing .hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== HERO FIX (NO MERGE + RIGHT BOX BACK) ===== */
+
+.hero-landing { padding: 44px 0; }
+
+/* KUTULAR ASLA BİRLEŞMESİN: min-width + gap + overflow */
+.hero-landing .hero-inner{
+  display: grid;
+  grid-template-columns: minmax(520px, 1.15fr) minmax(360px, 0.85fr); /* SOL biraz küçüldü */
+  gap: 32px; /* net boşluk */
+  align-items: start;
+}
+
+/* Dar ekranlarda alt alta */
+@media (max-width: 980px){
+  .hero-landing .hero-inner{ grid-template-columns: 1fr; }
+}
+
+/* SOL CAM KUTU (OK DEDİN, dokunmuyorum ama taşmayı engelliyorum) */
+.hero-glass{
+  background: rgba(255,255,255,.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 26px 28px;
+  border: 1px solid rgba(255,255,255,.42);
+  box-shadow: 0 20px 50px rgba(15,23,42,.25);
+  overflow: hidden;
+}
+
+/* SAĞ KUTU: “eskisi gibi” daha dolu, daha açık okunur */
+.hero-note-landing{
+  background: rgba(15, 23, 42, 0.78);
+  color: #f8fafc;
+  border-radius: 20px;
+  padding: 22px 20px;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 45px rgba(2,6,23,.35);
+  overflow: hidden; /* birleşme/taşma hissini keser */
+}
+
+/* Sağ kutudaki listeyi eski yoğunlukta yap */
+.hero-note-landing h3{
+  margin: 6px 0 10px;
+  font-size: 15px;
+  line-height: 1.25;
+}
+.hero-note-list li{
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.35;
+  opacity: .95;
+}
+
+/* Sağ kutu badge */
+.hero-note-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  font-weight: 800;
+  opacity: .9;
+}
+
+/* Hero başlık biraz nefes alsın (daralma hissi azalır) */
+.hero-title{ letter-spacing: -0.02em; }
+/* ===== HERO PATCH (KELİME KELİME ALT ALTA SORUNU + SOL ŞEFFAFLIK) ===== */
+
+/* Hero wrapper */
+.hero {
+  position: relative;
+}
+
+/* Hero inner: kesin grid + boşluk + birleşme yok */
+.hero .hero-inner {
+  display: grid !important;
+  grid-template-columns: minmax(560px, 1.15fr) minmax(420px, 0.85fr) !important;
+  gap: 36px !important;
+  align-items: start !important;
+}
+
+/* Mobilde alt alta */
+@media (max-width: 980px) {
+  .hero .hero-inner {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* SOL KUTU: cam/şeffaf zorla */
+.hero .hero-left {
+  min-width: 0 !important;
+  border-radius: 20px !important;
+  padding: 26px 28px !important;
+
+  background: rgba(255, 255, 255, 0.52) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.38) !important;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22) !important;
+  overflow: hidden !important;
+}
+
+/* SAĞ KUTU: genişliği sabitle + sağa yasla (daralıp kelime kelime düşmesin) */
+.hero .hero-note {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 460px !important;
+  justify-self: end !important;
+
+  border-radius: 20px !important;
+  padding: 20px 18px !important;
+  background: rgba(15, 23, 42, 0.78) !important;
+  color: #f8fafc !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.35) !important;
+  overflow: hidden !important;
+
+  /* KELİME KELİME ALT ALTA DÜŞMEYİ ENGELLE */
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  white-space: normal !important;
+}
+
+/* Sağ kutu başlık ve metin */
+.hero .hero-note h3 {
+  margin: 6px 0 10px !important;
+  font-size: 15px !important;
+  line-height: 1.25 !important;
+}
+
+/* Sağ kutu listeyi “eski gibi” düzgün hizala */
+.hero .hero-note ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 12px 0 0 !important;
+}
+
+.hero .hero-note li {
+  display: flex !important;
+  gap: 10px !important;
+  align-items: flex-start !important;
+
+  margin: 0 0 10px !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+
+  /* kelime kelime bölmeyi engelle */
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  white-space: normal !important;
+}
+
+/* Eğer li içinde ikon span’ların varsa: sabit genişlik ver */
+.hero .hero-note li > span:first-child {
+  width: 18px !important;
+  flex: 0 0 18px !important;
+  margin-top: 2px !important;
+}
+
+/* Hero başlığı biraz nefes alsın */
+.hero .hero-title {
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
 }
