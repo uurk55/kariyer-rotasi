@@ -30,5 +30,13 @@
     "excerpt": "Zaman kutulama + enerji yönetimi ile derin çalışma.",
     "tags": ["Verimlilik"],
     "cover": "/covers/pomodoro.png"
-  }
+  },
+  {
+  "slug": "kalibrasyon-takibi",
+  "title": "Kalibrasyon Takibi: Saha İçin En Basit ve Denetimde Sorunsuz Sistem",
+  "date": "2025-06-17",
+  "excerpt": "Denetimde sorun çıkarmayan, sahada gerçekten kullanılan en basit kalibrasyon takip sistemi.",
+  "tags": ["Kalite"],
+  "cover": "/covers/kalibrasyon.png"
+}
 ]

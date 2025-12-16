@@ -3826,12 +3826,6 @@ header a:hover::after {
   place-self: center !important;
 }
 
-/* Newsletter'ın bulunduğu section/container ne olursa olsun ortalasın */
-.section-alt .container,
-.section .container{
-  /* dokunmuyoruz, sadece newsletter üzerinde zorluyoruz */
-}
-
 /* İçerik ve form da ortalı dursun */
 .newsletter-card{
   text-align: center;
@@ -10504,5 +10498,686 @@ a[title*="Yukarı"]:hover{
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   POST (Blog Detail) Premium
+   ========================= */
+
+.post-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  z-index: 9999;
+  background: rgba(37, 99, 235, 0.95);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+/* HERO */
+.post-hero-card{
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 18px 60px rgba(2, 6, 23, 0.08);
+  margin-bottom: 14px;
+}
+
+.post-hero-kicker{
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  color: rgba(29, 78, 216, 0.85);
+  margin-bottom: 6px;
+}
+
+.post-hero-title{
+  font-family: Poppins,system-ui;
+  margin: 0 0 8px;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.post-hero-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(15, 23, 42, 0.65);
+  margin-bottom: 12px;
+}
+
+.post-hero-tags{
+  color: rgba(15, 23, 42, 0.55);
+}
+
+.post-hero-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* LAYOUT: TOC LEFT */
+.post-layout.post-layout--toc-left{
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+/* TOC */
+.toc-left .toc-card{
+  position: sticky;
+  top: 86px; /* navbar yüksekliğine göre */
+  padding: 14px;
+  border-radius: 18px;
+}
+
+.toc-title{
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.toc-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.toc-list li a{
+  display: block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: rgba(15, 23, 42, 0.74);
+  font-size: 13px;
+}
+
+.toc-list li[data-level="3"] a{
+  padding-left: 18px;
+  font-size: 12.5px;
+  opacity: 0.92;
+}
+
+.toc-list li a:hover{
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+/* CONTENT */
+.post-article-card{
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.post-markdown{
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(15, 23, 42, 0.88);
+}
+
+.post-markdown h1,
+.post-markdown h2,
+.post-markdown h3{
+  font-family: Poppins,system-ui;
+  line-height: 1.25;
+}
+
+.post-markdown h2{ font-size: 20px; margin: 18px 0 10px; }
+.post-markdown h3{ font-size: 16px; margin: 14px 0 8px; opacity: .95; }
+
+.post-markdown pre{
+  background: rgba(2, 6, 23, 0.92);
+  color: rgba(255,255,255,0.9);
+  padding: 12px;
+  border-radius: 14px;
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.post-markdown code{
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+
+.post-markdown blockquote{
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-left: 3px solid rgba(37, 99, 235, 0.7);
+  background: rgba(37, 99, 235, 0.06);
+  border-radius: 12px;
+}
+
+/* Newsletter (premium, küçük) */
+.post-newsletter-wrap{
+  margin-top: 18px;
+}
+
+.post-newsletter-card{
+  border-radius: 18px;
+  padding: 14px;
+  max-width: 720px;
+}
+
+.post-newsletter-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.post-newsletter-title{
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.post-newsletter-sub{
+  font-size: 13px;
+  color: rgba(15, 23, 42, 0.62);
+  margin-top: 2px;
+}
+
+.post-newsletter-foot{
+  font-size: 12px;
+  color: rgba(15, 23, 42, 0.5);
+  margin-top: 8px;
+}
+
+/* Related */
+.post-related-wrap{
+  margin-top: 22px;
+}
+
+.post-related-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.post-related-title{
+  font-family: Poppins,system-ui;
+  font-size: 18px;
+  margin: 0;
+}
+
+.post-related-all{
+  font-size: 13px;
+  text-decoration: none;
+  color: rgba(29, 78, 216, 0.95);
+}
+
+.post-related-card{
+  padding: 12px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+}
+
+.post-related-date{
+  font-size: 12px;
+  color: rgba(15, 23, 42, 0.55);
+  margin-bottom: 4px;
+}
+
+.post-related-h4{
+  margin: 0 0 6px;
+  font-family: Poppins,system-ui;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.post-related-excerpt{
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+/* Back to top */
+.post-top-btn{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  background: rgba(15, 23, 42, 0.85);
+  color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.28);
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.post-top-btn:hover{
+  background: rgba(37, 99, 235, 0.95);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .post-layout.post-layout--toc-left{
+    grid-template-columns: 1fr;
+  }
+  .toc-left .toc-card{
+    position: relative;
+    top: auto;
+  }
+}
+/* ===== POST HERO FIX (okunurluk + premium) ===== */
+.post-hero-card{
+  /* Transparanlığı azalt -> kontrast artsın */
+  background: rgba(255,255,255,0.96) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.10) !important;
+  padding: 18px !important;
+  border-radius: 18px !important;
+}
+
+/* Üstte ince premium şerit */
+.post-hero-card::before{
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(37,99,235,0.95), rgba(99,102,241,0.85), rgba(14,165,233,0.65));
+  margin-bottom: 12px;
+}
+
+/* Başlık kesin okunur olsun */
+.post-hero-title{
+  color: rgba(15, 23, 42, 0.98) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Kicker ve meta daha net */
+.post-hero-kicker{
+  color: rgba(29, 78, 216, 0.90) !important;
+  opacity: 1 !important;
+}
+
+.post-hero-meta{
+  color: rgba(15, 23, 42, 0.62) !important;
+  opacity: 1 !important;
+}
+
+/* Action butonları biraz daha “buton” gibi dursun */
+.post-hero-actions .btn{
+  border-radius: 12px;
+}
+
+.post-hero-actions .btn.btn-ghost{
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+}
+.post-hero-actions .btn.btn-ghost:hover{
+  background: rgba(15, 23, 42, 0.06);
+}
+
+/* TOC kartı da hero ile aynı kaliteye gelsin */
+.toc-left .toc-card{
+  background: rgba(255,255,255,0.92) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.08) !important;
+}
+
+/* Mobile'da hero başlık biraz küçülsün */
+@media (max-width: 520px){
+  .post-hero-title{ font-size: 24px !important; }
+}
+/* ===========================
+   POST PAGE — FINAL PREMIUM
+   En alta ekle (override)
+=========================== */
+
+.post-page{
+  position: relative;
+}
+
+/* HERO */
+.post-hero{
+  padding: 18px 0 8px;
+  background:
+    radial-gradient(900px 420px at 10% 0%, rgba(59,130,246,0.16), transparent 60%),
+    radial-gradient(900px 420px at 90% 0%, rgba(99,102,241,0.12), transparent 60%);
+}
+
+.post-hero-inner{
+  display: block;
+}
+
+.post-hero-card{
+  background: rgba(255,255,255,0.96) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.10) !important;
+  padding: 18px !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+}
+
+.post-hero-card::before{
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(37,99,235,0.95), rgba(99,102,241,0.85), rgba(14,165,233,0.65));
+  margin-bottom: 12px;
+}
+
+.post-hero-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.post-hero-kicker{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(29, 78, 216, 0.90) !important;
+}
+
+.post-hero-actions{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.post-hero-title{
+  margin: 12px 0 6px !important;
+  color: rgba(15, 23, 42, 0.98) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 34px;
+}
+
+.post-hero-meta{
+  color: rgba(15, 23, 42, 0.62) !important;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.post-hero-tags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.post-tag{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: rgba(15,23,42,0.72);
+  background: rgba(15,23,42,0.04);
+  border: 1px solid rgba(15,23,42,0.08);
+}
+
+.post-hero-cover{
+  margin-top: 14px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(15,23,42,0.10);
+  background: rgba(15,23,42,0.03);
+}
+
+.post-hero-cover img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-hero-cover-placeholder{
+  height: 220px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background:
+    radial-gradient(520px 220px at 30% 10%, rgba(59,130,246,0.22), transparent 60%),
+    radial-gradient(520px 220px at 70% 10%, rgba(99,102,241,0.16), transparent 60%),
+    linear-gradient(180deg, rgba(15,23,42,0.02), rgba(15,23,42,0.05));
+}
+
+.phcp-title{
+  font-weight: 800;
+  font-size: 20px;
+  color: rgba(15,23,42,0.88);
+}
+.phcp-sub{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(15,23,42,0.55);
+}
+
+/* LAYOUT */
+.post-layout-grid{
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+/* TOC LEFT */
+.toc-left{
+  position: sticky;
+  top: 88px; /* navbar yüksekliğine göre ayarlayabilirsin */
+  align-self: start;
+}
+
+.toc-card{
+  background: rgba(255,255,255,0.92) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.08) !important;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.toc-title{
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-family: Poppins, system-ui;
+  color: rgba(15,23,42,0.92);
+}
+
+.toc-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.toc-li.level-3 .toc-link{
+  padding-left: 14px;
+  font-size: 13px;
+}
+
+.toc-link{
+  display: block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(15,23,42,0.72);
+  border: 1px solid transparent;
+  background: transparent;
+  transition: 160ms ease;
+}
+
+.toc-link:hover{
+  background: rgba(15,23,42,0.04);
+}
+
+.toc-link.is-active{
+  background: rgba(37,99,235,0.10);
+  border-color: rgba(37,99,235,0.20);
+  color: rgba(15,23,42,0.92);
+}
+
+/* CONTENT */
+.post-content-card{
+  padding: 18px !important;
+  border-radius: 18px !important;
+}
+
+.post-main{
+  min-width: 0;
+}
+
+/* NEWSLETTER */
+.post-newsletter{
+  margin-top: 18px;
+}
+.post-newsletter-card{
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 18px !important;
+  padding: 18px !important;
+}
+.post-newsletter-head h3{
+  margin: 0 0 6px;
+  font-family: Poppins, system-ui;
+}
+.post-newsletter-note{
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(15,23,42,0.55);
+}
+
+/* RELATED */
+.post-related{
+  margin-top: 26px;
+}
+.post-related-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.post-related-head h3{
+  margin: 0;
+  font-family: Poppins, system-ui;
+  font-size: 18px;
+}
+.post-related-all{
+  font-size: 13px;
+  text-decoration: none;
+  color: rgba(37,99,235,0.95);
+}
+.post-related-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.post-related-card{
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(15,23,42,0.10);
+  box-shadow: 0 16px 45px rgba(2,6,23,0.07);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+}
+.post-related-meta{
+  font-size: 12px;
+  color: rgba(15,23,42,0.55);
+}
+.post-related-title{
+  font-weight: 800;
+  font-family: Poppins, system-ui;
+  color: rgba(15,23,42,0.92);
+  line-height: 1.25;
+}
+.post-related-excerpt{
+  font-size: 13px;
+  color: rgba(15,23,42,0.68);
+  line-height: 1.45;
+}
+.post-related-actions{
+  margin-top: 6px;
+}
+.post-related-link{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  color: rgba(37,99,235,0.95);
+}
+
+/* BACK TO TOP (her zeminde net) */
+.back-to-top{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(15,23,42,0.85);
+  color: white;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 20px 60px rgba(2,6,23,0.25);
+  cursor: pointer;
+  z-index: 999;
+}
+.back-to-top:hover{
+  background: rgba(15,23,42,0.92);
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px){
+  .post-layout-grid{
+    grid-template-columns: 1fr;
+  }
+  .toc-left{
+    position: relative;
+    top: auto;
+    order: -1; /* mobilde içerikten önce gelsin */
+  }
+  .post-related-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .post-hero-title{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 560px){
+  .post-related-grid{
+    grid-template-columns: 1fr;
+  }
+  .post-hero-title{
+    font-size: 26px;
+  }
+  .post-hero-cover img,
+  .post-hero-cover-placeholder{
+    height: 180px;
   }
 }
