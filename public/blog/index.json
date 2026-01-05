@@ -38,5 +38,30 @@
   "excerpt": "Denetimde sorun çıkarmayan, sahada gerçekten kullanılan en basit kalibrasyon takip sistemi.",
   "tags": ["Kalite"],
   "cover": "/covers/kalibrasyon.png"
+},
+  {
+    "slug": "iso-9001-2015-temelleri",
+    "title": "ISO 9001:2015 Temelleri: Standartları \"Mış Gibi\" Yapmadan İşe Entegre Etmek",
+    "date": "2025-12-28",
+    "excerpt": "ISO 9001’i denetçi ikna sistemi gibi değil, işin doğal parçası gibi kurmak: 4–10 maddeleri sahadaki karşılıklarıyla anlatan uygulamalı rehber.",
+    "tags": ["Kalite", "ISO 9001", "Kalite Yönetim Sistemi"],
+    "cover": "/covers/iso9001.png"
+  },
+  {
+  "slug": "kalibrasyon-takip-listesi-cihaz-dogrulama",
+  "title": "Kalibrasyon Takip Listesi: Cihaz Doğrulama Nasıl Yapılır? (Excel İndir)",
+  "date": "2025-12-30",
+  "excerpt": "Kalibrasyon ve doğrulama farkı, cihaz güvenilirliği ve Excel tabanlı Kalibrasyon Takip Listesi.",
+  "tags": ["Kalite", "ISO 9001", "Kalibrasyon", "Doğrulama", "Ölçüm", "Excel", "Şablon"],
+  "cover": "/covers/kalibrasyon.png"
+},
+{
+  "slug": "chatgpt-baslangic-rehberi-10-ileri-seviye-prompt",
+  "title": "ChatGPT Başlangıç Rehberi: İş Hayatında Fark Yaratacak 10 İleri Seviye Komut (Prompt Mühendisliği)",
+  "date": "2026-01-01",
+  "excerpt": "Persona–Bağlam–Görev–Format formülüyle iş hayatında angarya işleri saniyelere indiren 10 ileri seviye ChatGPT promptu.",
+  "tags": ["Yapay Zekâ", "Verimlilik", "Kariyer", "ChatGPT", "Prompt", "İstem Mühendisliği"],
+  "cover": "/covers/chatgpt-prompt.png"
 }
+
 ]
